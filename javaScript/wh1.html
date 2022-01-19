@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+
+</head>
+<body>
+    <div style= text-align:center solid, id ="htl">Select your Accomadation</br></div>
+    
+    <script src = "wHotelroom.js"></script>
+    <script>
+
+        var hotels =[h1,h2,h3,h4,h5,h6,h7];
+        f1 = ({image,price,Roomtype}) => { document.write( `<div style = float:left;> <img src=${image} width= "120px" height="120px"><br>The room is **${Roomtype}** <p class= pricepara> **${price}**</p> &nbsp<br><br><br></div> `);};
+        for(var i=0;i<hotels.length;i++){
+       f1(hotels[i]);
+        }
+
+    </script>
+
+  <script>
+    
+    f = (evt) => alert(`The product is in offer. ${evt.target.innerHTML}`); 
+    imgEH1 = (evt) => `${evt.target.width = 300} ${evt.target.height = 300}`;
+    imgEH2 = (evt) => `${evt.target.width = 120} ${evt.target.height = 120}`;
+
+    var arrOfPTags = document.getElementsByTagName("img");
+    for(imgTag of arrOfPTags){
+        imgTag.addEventListener("mouseover", imgEH1);  
+        imgTag.addEventListener("mouseout", imgEH2);  }
+
+       var ptag = document.getElementsByClassName("pricepara");
+       for(pricepara of ptag) {
+            pricepara.addEventListener("click", f);
+           }
+    
+
+        
+    </script>
+
+
+</body>
+</html>

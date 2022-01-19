@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<body style="text-align: center;">
+	<h1>Type here in the textbox</h1>
+
+<textarea id="word" ></textarea><br><br>
+
+ <button onclick="countWord()"> Count Words </button>
+ <button onclick="countChar()"> Count Char</button>
+
+	
+ <p> Word Count:
+     <span id="show">0</span>
+	</p>
+	<p> char Count:
+		<span id = "Char">0</span>
+	</p>
+
+
+
+	<script>
+		function countWord() {
+			var words = document.getElementById("word").value;
+			var count =0;
+			var split = words.split(' ');
+
+			for (var i = 0; i < split.length; i++) {
+				if (split[i] != "") {
+					count += 1;
+				}
+			}
+
+
+			document.getElementById("show").innerHTML = count;
+		}
+          
+           function countChar() {
+               var letter = document.getElementById("word").value;
+               var cnt = 0;
+
+               for(var i=0; i< letter.length; i++){
+                   if(letter[i] != ""){
+                       cnt += 1;
+                   }
+                    
+                   }
+                   document.getElementById("Char").innerHTML= cnt;
+               }
+  	</script>
+      
+</body>
+
+</html>

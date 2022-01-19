@@ -1,0 +1,76 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+<title>News Updates</title>  
+<style>  
+.thNews {  
+background-color: #444;  
+color: white;  
+}  
+.thNews, .tdNews {  
+border: 1px solid #444;  
+padding: 15px;  
+text-align: left;  
+}  
+</style>  
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>  
+</head>  
+<body>  
+<script type="text/javascript">  
+$(function() {  
+var params = {  
+"Key": "<Parameter value";  
+// Request parameters  
+};  
+// provide the Web Api url (must) and include the Params (parameters) if it is required.  
+$.ajax({  
+url: "<Web API URL>" + $.param(params),  
+type: "GET",  
+contentType: "application/json; charset=utf-8",  
+dataType: "json",  
+cache: false,  
+})  
+.done(function(data) {  
+//alert("success");  
+var trHTML = '';  
+$.each(data.News, function (i, item) {  
+if (data.News[i].State != null){  
+trHTML += '<tr class="trNews"><td class="tdNews">' + data.News[i].State + '</td><td class="tdNews">' + data.News[i].Header + '</td><td class="tdNews">' + data.News[i].NewsDesc + '</td></tr>';  
+}  
+});  
+$('#divIncidents').append(trHTML);//To add the table row to table  
+})  
+.fail(function() {  
+$('#divErr').append("error");// To display the error in div  
+});  
+});  
+</script>  
+<div><strong><span>Employee details</span></strong>  
+<table id="divIncidents">  
+<tr class="trNews">  
+<th class="thNews">EmpId</th>  
+<th class="thNews">Emp Name</th>  
+<th class="thNews">Salary</th>  
+</tr>
+<tr>
+<td class ="thNews">001</td>
+<td class ="thNews">jhon</td>
+<td class ="thNews">4.5LPA</td>
+</tr>
+<tr><td class ="thNews">002</td>
+<td class ="thNews">Anna</td>
+<td class ="thNews">4LPA</td></tr>
+<tr><td class ="thNews">003</td>
+    <td class ="thNews">Advin</td>
+    <td class ="thNews">4.3LPA</td></tr>
+ <tr><td class ="thNews">004</td>
+     <td class ="thNews">Navika</td>
+    <td class ="thNews">4.8LPA</td></tr>
+ <tr><td class ="thNews">005</td>
+      <td class ="thNews">kinn</td>
+    <td class ="thNews">4.2LPA</td></tr>
+</table>  
+</div>  
+<div id="divErr"></div>  
+</body>  
+</html>  

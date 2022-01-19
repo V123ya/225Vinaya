@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+<script>
+    var a = 10;//golabal scope
+    var bus1 = new bus(1000,"blue"); //gloal scope
+
+    function f(){
+        var x =5; //local scope
+    };
+
+    document.write(`value of global variable a is $(a) `);
+    document.write(`value of global variable bus1 is $(bus1.price)`);
+    document.write(`value of f's local variable x is $(x) `);
+
+</script>
+
+</html>

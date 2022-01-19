@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Emp table</title>
+        </head>
+        <body>
+    <input type="button" id = "btnGenerate" value="Generate Table" />
+
+<div id="dvTable">
+</div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+$(function () {
+    $("#btnGenerate").click(function () {
+        //Build an array containing Customer records.
+        var Emp = new Array();
+        Emp.push(["Emp Id", "Name", "Salary"]);
+        Emp.push([001, "John", "3LPA"]);
+        Emp.push([002, "Viya", "4LPA"]);
+        Emp.push([003, "Anna", "3.6LPA"]);
+        Emp.push([004, "Robert", "3.2LPA"]);
+ 
+        //Create a HTML Table element.
+        var table = $("<table />");
+        table[0].border = "1";
+ 
+        //Get the count of columns.
+        var columnCount = Emp[0].length;
+ 
+        //Add the header row.
+        var row = $(table[0].insertRow(-1));
+        for (var i = 0; i < columnCount; i++) {
+            var headerCell = $("<th />");
+            headerCell.html(Emp[0][i]);
+            row.append(headerCell);
+        }
+ 
+        //Add the data rows.
+        for (var i = 1; i < Emp.length; i++) {
+            row = $(table[0].insertRow(-1));
+            for (var j = 0; j < columnCount; j++) {
+                var cell = $("<td />");
+                cell.html(Emp[i][j]);
+                row.append(cell);
+            }
+        }
+ 
+        var dvTable = $("#dvTable");
+        dvTable.html("");
+        dvTable.append(table);
+    });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+    var hotel ={
+        Roomno : 101,
+         Roomtype :" Ac",
+         price : 2000,
+         Food : "yes" }//hotel object literal
+   
+         function displayDetails(hotel){
+         document.write( `<hr>displayDetails<br> RoomNo of a Room ${hotel.Roomno} and type is ${hotel.Roomtype}` );
+         };
+
+    
+         displayDetails(hotel);
+
+   
+         function displayDetails1({price}){
+         document.write( `<hr>displaydetails1 <br>Price per night is ${price}`);
+  
+        };
+    
+        displayDetails1(hotel);
+    
+    </script>
+
+
+    <script>
+
+
+   /* In nrml way we are writing 
+   function f1() {
+       document.write(`<br>Inside f1<br>`);
+   }
+      f1();
+      
+      Instead this we can use the short form below*/
+
+      // using arrow notations
+   f1 = () => document.write("<br>Inside f2<br>");
+   f1();
+
+  //addition
+   f2 = (a,b) => a+b;
+   var val = f2(2,9);
+   document.write(`<hr>addition value from f2 is ${val} <br>`);
+
+    
+   
+    </script>
+
+    
+    
+</body>
+</html>

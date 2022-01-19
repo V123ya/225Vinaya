@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function discount(price, percentage) {
+        return price - ((price * percentage) / 100);
+      }
+      function offerprice(price) {
+        return price / 2;
+      }
+
+      function Finalprice(price, percentage, f, g) {
+        /* if(price > 50){
+            var k =f(price);
+        }
+        else{
+            k=price; }
+        }*/
+
+        var k = f(price); // g is the offer function
+        var p = g(k, percentage); //p is discount on the offer
+        return p;
+      }
+      var f = Finalprice(100, 20, offerprice, discount);
+      document.write("Finial price of 100 and 20<br>");
+      document.write(" " + f);
+    </script>
+  </body>
+</html>

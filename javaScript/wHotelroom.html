@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+    <script>
+
+
+    class hotelroom{
+        constructor(RoomID,Roomtype,price,withview,withAc,food,clubacess)
+        {
+            this.RoomID=RoomID;
+            this.Roomtype = Roomtype;
+            this.withview = withview;
+            this.price= price;
+            this.withAc = withAc;
+            this.food =food;
+            this.clubacess =clubacess;
+        }
+        
+ 
+   display()
+    {
+       document.write("<br/> the Id is"+ this.RoomID)
+       document.write("<br/> the type is"+ this.Roomtype)
+       document.write("<br/> the room view"+ this.withview); 
+       document.write("<br/> the price"+ this.price);
+       document.write("<br/> Room with AC"+ this.withAC);
+       document.write("<br/> With food"+ this.food);
+       document.write("<br/> with clubacess"+ this.clubacess);
+
+       }
+    }
+
+  var h1 = new hotelroom(101,"b1","no", 5500,"yes", "yes");
+  var h2 = new hotelroom(102,"b1","no",4500,"yes","yes");
+  var h3 = new hotelroom(201,"s1", "yes", 6000, "yes", "yes");
+  var h4 = new hotelroom(201,"s1", "no", 5500, "yes", "yes");
+
+  h1.display();  
+  h2.display();
+  h3.display();
+  h4.display();
+
+                
+</script>
+
+<body>
+    
+</body>
+</html>
